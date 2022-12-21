@@ -50,3 +50,15 @@ body {
   height: 33vh;
   box-shadow: 0 4px 4px 0px gray;
 }
+
+form {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  display: flex;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.form-content {
+  margin-top: 2rem;
+}
