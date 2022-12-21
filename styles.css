@@ -84,4 +84,15 @@ button {
   border: none;
   background-color: rgb(59, 81, 123);
   color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+p {
+  margin-left: 3rem;
+  margin-top: 2rem;
 }
