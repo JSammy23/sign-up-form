@@ -55,10 +55,33 @@ form {
   font-size: 1.2rem;
   line-height: 1.2;
   display: flex;
-  padding: 10px;
   justify-content: space-evenly;
 }
 
 .form-content {
   margin-top: 2rem;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  font-size: 1rem;
+}
+
+input:user-invalid {
+  border: 2px solid red;
+}
+
+button {
+  margin-top: 3rem;
+  margin-left: 4rem;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(59, 81, 123);
+  color: white;
 }
