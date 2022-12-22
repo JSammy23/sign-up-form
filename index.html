@@ -7,11 +7,34 @@
     <title>Sign Up Today!</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+  <script>
+    function verifyPassword() {
+      let pswd1 = document.getElementById("password");
+      let pswd2 = document.getElementById("confirm-password");
+      if (pswd1.value != pswd2.value) {
+        alert("Passwords do not match.");
+      } else {
+        alert("Password created successfully");
+      }
+    }
+    pswd1.addEventListener("keyup", () => {
+      if (pswd2.value.length != 0) verifyPassword();
+    });
+    pswd2.addEventListener("keyup", verifyPassword);
+  </script>
   <body>
     <div class="img-div">
       <div class="overlay">
         <h1>Deer Creek Lodge</h1>
         <img src="/img/noun-deer-1044799.svg" alt="Deer Icon" width="175px" />
+      </div>
+      <div class="img-cred">
+        <span
+          >Image by
+          <a href="https://unsplash.com/@mischievous_penguins">Casey Horner</a>
+          on
+          <a href="https://unsplash.com/photos/CN_42yx-2Xo">Unsplash</a></span
+        >
       </div>
     </div>
     <div class="content-container">
@@ -36,6 +59,7 @@
                   type="text"
                   name="first-name"
                   id="first-name"
+                  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
                   required
                 />
               </label>
@@ -55,7 +79,13 @@
             <div class="form-content">
               <label for="password"
                 >Password
-                <input type="password" name="password" id="password" required />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                  required
+                />
               </label>
             </div>
           </div>
@@ -75,7 +105,13 @@
             <div class="form-content">
               <label for="phone-number"
                 >Phone Number
-                <input type="number" />
+                <input
+                  type="text"
+                  pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                  id="phone-number"
+                  name="phone-number"
+                  placeholder="123-456-7890"
+                />
               </label>
             </div>
             <div class="form-content">
@@ -85,6 +121,7 @@
                   type="password"
                   name="confirm-password"
                   id="confirm-password"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
                   required
                 />
               </label>
@@ -93,7 +130,9 @@
         </form>
       </div>
       <div class="content-bottom">
-        <button form="form-one" type="submit">Create Account</button>
+        <button form="form-one" type="submit" onclick="verifyPassword()">
+          Create Account
+        </button>
         <p>Already have an account? <a href="#">Log in</a></p>
       </div>
     </div>
