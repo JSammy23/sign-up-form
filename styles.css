@@ -12,7 +12,7 @@ body {
 }
 
 .img-div {
-  background: url(./img/background.JPG);
+  background: url(./img/background-img.JPG);
   min-width: 640px;
   min-height: 100vh;
   max-height: 960px;
